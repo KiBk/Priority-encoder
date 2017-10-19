@@ -1,0 +1,13 @@
+module encoder (output logic [1:0] y, logic valid, input logic [3:0] a);
+
+always_comb
+  unique casez (a)
+    4'b1??? : {y,valid} = 3b'111;
+    4'b01?? : {y,valid} = 3b'101;
+    4'b001? : {y,valid} = 3b'011;    
+    4'b0001 : {y,valid} = 3b'001; 
+    default : {y,valid} = 3b'000;
+  endcase
+
+endmodule
+    
